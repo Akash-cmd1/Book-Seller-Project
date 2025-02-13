@@ -168,12 +168,12 @@ aws s3 cp ~/book-seller/target/book-seller-1.0.0.war s3://<your-bucket-name>/For
 2. Click Create Database.
 3. Select Aurora-MySQL.
 4. Settings:
-    -DB Cluster Identifier: yourname-book-seller
-    -Master Username: admin
-    -Password: test1234
-    -Instance Type: db.t3.small
-    -Public Access: Yes
-    -Security Group: Allow port 3306 from 0.0.0.0/0.
+- **DB Cluster Identifier: yourname-book-seller
+- **Master Username: admin
+- **Password: test1234
+- **Instance Type: db.t3.small
+- **Public Access: Yes
+- **Security Group: Allow port 3306 from 0.0.0.0/0.
 5. Click Create Database → Wait 10 minutes.
 
 
