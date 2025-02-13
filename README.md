@@ -25,38 +25,10 @@ Before starting, ensure you have the following:
 ## **Cloudshell**
 
 ## **Step 1: Download and Extract the Project**
-
-<pre>
-<b>Download the project:</b>
-<code><button onclick="copyToClipboard('wget https://s3.amazonaws.com/klowdbay.com/YTCodeResources/book-seller.tar.gz')">📋 Copy</button>
+```bash
 wget https://s3.amazonaws.com/klowdbay.com/YTCodeResources/book-seller.tar.gz
-</code>
-</pre>
-
-<pre>
-<b>List files:</b>
-<code><button onclick="copyToClipboard('ls')">📋 Copy</button>
 ls
-</code>
-</pre>
-
-<pre>
-<b>Extract the tar file:</b>
-<code><button onclick="copyToClipboard('tar -xzvf book-seller.tar.gz')">📋 Copy</button>
+```
 tar -xzvf book-seller.tar.gz
-</code>
-</pre>
-
-<pre>
-<b>List files again:</b>
-<code><button onclick="copyToClipboard('ls')">📋 Copy</button>
+```
 ls
-</code>
-</pre>
-
-<script>
-function copyToClipboard(text) {
-  navigator.clipboard.writeText(text);
-  alert("Copied: " + text);
-}
-</script>
