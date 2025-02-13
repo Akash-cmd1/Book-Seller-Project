@@ -22,8 +22,9 @@ Before starting, ensure you have the following:
 
 ## **Setup and Deployment Steps**
 
-### **Step 1: Launch a Cloud9 (Ubuntu) Instance**
-1. Open **AWS Cloud9** or your local Linux/Ubuntu terminal.
-2. Navigate to your workspace directory:
-   ```bash
-   cd ~
+### **1. Download the Project Files**
+```bash
+wget https://s3.amazonaws.com/klowdbay.com/YTCodeResources/book-seller.tar.gz
+ls
+tar -xzvf book-seller.tar.gz
+ls
