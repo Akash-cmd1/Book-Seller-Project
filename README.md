@@ -112,7 +112,7 @@ cd book-seller
 ls
 ```
 
-#Navigate to Web Application Files:
+Navigate to Web Application Files: 
 Lists all front-end web files (HTML/JSP).
 ```bash
 cd ~/book-seller/src/main/webapp
@@ -120,6 +120,41 @@ cd ~/book-seller/src/main/webapp
 ```bash
 ls
 ```
+View a sample JSP file:
+```bash
+cat index.jsp
+```
+```bash
+cat order.jsp
+```
+
+
+## **Step 6: Build and Package the Project**
+Builds the project and generates a .war file inside the target folder.
+```bash
+cd ~/book-seller
+```
+```bash
+mvn clean package
+```
+```bash
+ls
+```
+```bash
+ls ~/book-seller/target
+```
+
+
+
+## **Step 7: Create an S3 bucket (or use an existing one) in AWS.**
+Copy warfile to the S3 bucket. When you create beanstalk platform, you can upload the code from the S3 bucket.
+
+## **Upload .war File to S3**
+Uploads the packaged .war file to an S3 bucket for AWS Elastic Beanstalk deployment.
+```bash
+aws s3 cp ~/book-seller/target/book-seller-1.0.0.war s3://book-seller-bucket123/ForBeanstalk/
+
+
 
 
 
