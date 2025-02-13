@@ -27,9 +27,9 @@ Before starting, ensure you have the following:
 ## **Step 1: Download and Extract the Project**
 ```bash
 wget https://s3.amazonaws.com/klowdbay.com/YTCodeResources/book-seller.tar.gz
-ls
 ```
 ```bash
 tar -xzvf book-seller.tar.gz
-
+```
+```bash
 ls
