@@ -112,7 +112,7 @@ cd book-seller
 ls
 ```
 
-Navigate to Web Application Files:
+#Navigate to Web Application Files:
 Lists all front-end web files (HTML/JSP).
 ```bash
 cd ~/book-seller/src/main/webapp
