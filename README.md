@@ -157,7 +157,7 @@ aws s3 cp ~/book-seller/target/book-seller-1.0.0.war s3://<your-bucket-name>/For
 
 ## **Step 8: Deploy the Project on AWS Elastic Beanstalk**
 1. Go to the AWS Elastic Beanstalk Console.
-2. Click Create Application → Name it book-seller-101.
+2. Click Create Application → Name it like book-seller-101.
 3. Choose Tomcat as the platform.
 4. Upload the .war file from your S3 bucket.
 5. Click Deploy → Wait for ~10 minutes.
@@ -168,14 +168,79 @@ aws s3 cp ~/book-seller/target/book-seller-1.0.0.war s3://<your-bucket-name>/For
 2. Click Create Database.
 3. Select Aurora-MySQL.
 4. Settings:
-- **DB Cluster Identifier: yourname-book-seller
-- **Master Username: admin
-- **Password: test1234
-- **Instance Type: db.t3.small
-- **Public Access: Yes
-- **Security Group: Allow port 3306 from 0.0.0.0/0.
+   - DB Cluster Identifier: yourname-book-seller
+   - Master Username: <username>
+   - Password: <***>
+   - Instance Type: db.t3.small
+   - Public Access: Yes
+   - Security Group: Allow port 3306 from 0.0.0.0/0.
 5. Click Create Database → Wait 10 minutes.
 
 
+## **Step 10: Connect to AWS RDS MySQL Database**
+```bash
+mysql -h <your-db-endpoint> -P 3306 -u <username> -p
+```
+Once inside MySQL, create the database:
+```bash
+CREATE DATABASE ebdb;
+```
+```bash
+USE ebdb;
+```
+Create a Books Table:
+```bash
+CREATE TABLE books (
+    book_id INT AUTO_INCREMENT,
+    title VARCHAR(250) NOT NULL,
+    author VARCHAR(50),
+    Price FLOAT,
+    Qty INT,
+    PRIMARY KEY (book_id)
+) ENGINE = InnoDB;
+```
+Insert sample data:
+```bash
+INSERT INTO books (book_id, title, author, Price, Qty)
+VALUES (1100, 'Chamber of Secrets', 'Rowling', 11.11, 4),
+(1103, 'Philosophers Stone', 'Rowling', 10.90, 8),
+(1105, 'War and Peace', 'Tolstoy', 22.22, 2),
+(1107, 'Romeo and Juliet', 'Shakespear', 33.33, 5),
+(1109, 'Othallo', 'Shakespear', 13.99, 7),
+(1102, 'KingLear', 'Shakespear', 10.79, 3),
+(1111, 'Death on the Nile', 'Agatha', 44.4, 15),
+(1113, 'ABC Murders', 'Agatha', 39.4, 11),
+(1115, 'Anna Kareneena', 'Tolstoy', 55.55, 23);
+```
+Check if the table is created:
+```bash
+SHOW TABLES;
+```
+```bash
+SELECT * FROM books;
+```
+
+
+## **Step 11: Link Elastic Beanstalk to RDS**
+1. Go to Elastic Beanstalk Console.
+2. Click Environment → Configuration.
+3. Under Software, click Edit.
+4. Add the following Environment Properties:
+   - RDS_USERNAME: <username>
+   - RDS_PASSWORD: <***>
+   - RDS_PORT: 3306
+   - RDS_HOSTNAME: <your-db-endpoint.rds.amazonaws.com>
+   - RDS_DB_NAME: ebdb
+5. Click Apply → Wait for updates.
+
+
+## **Step 12: Access Your Application**
+1. Go to the Beanstalk Console.
+2. Copy the Application URL (e.g., http://book-seller.us-east-1.elasticbeanstalk.com/).
+3. Open it in a browser and test:
+   - Select an author.
+   - View book list.
+   - Place an order.
+   - Check database updates.
 
 
