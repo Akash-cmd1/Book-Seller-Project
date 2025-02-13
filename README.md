@@ -24,12 +24,14 @@ Before starting, ensure you have the following:
 
 ## **Cloudshell**
 
-## **Step 1: Download and Extract the Project**
+## **Step 1: Download the Project Source Code**
 ```bash
 wget https://s3.amazonaws.com/klowdbay.com/YTCodeResources/book-seller.tar.gz
 ```
+Extracts the compressed project files
 ```bash
 tar -xzvf book-seller.tar.gz
 ```
+list the files
 ```bash
 ls
