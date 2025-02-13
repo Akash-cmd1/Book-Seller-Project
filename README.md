@@ -42,11 +42,45 @@ ls
 ```bash
 tree .
 ```
-#If tree is not installed, install it using:
+If tree is not installed, install it using:
 ```bash
 sudo apt install tree -y  # For Ubuntu/Debian
 sudo yum install tree  # For Amazon Linux
 sudo snap install tree  # Alternative installation
+```
+
+
+## **Step: Install Java JDK 13**
+```bash
+wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
+```
+Extracts Java JDK 13
+```bash
+tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
+```
+Move Java JDK 13 to /opt/
+```bash
+sudo mv jdk-13.0.1 /opt/
+```
+Sets Java paths and verifies installation.
+```bash
+JAVA_HOME='/opt/jdk-13.0.1'
+```
+```bash
+PATH="$JAVA_HOME/bin:$PATH"
+```
+```bash
+export PATH
+```
+```bash
+java -version
+```
+
+
+
+
+
+
 
 
 
