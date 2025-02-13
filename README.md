@@ -145,22 +145,36 @@ ls ~/book-seller/target
 ```
 
 
-
-## **Step 7: Create an S3 bucket (or use an existing one) in AWS.**
+## **Step 7: Create an AWS S3 bucket (or use an existing one) in AWS**
 Copy warfile to the S3 bucket. When you create beanstalk platform, you can upload the code from the S3 bucket.
 
-## **Upload .war File to S3**
+## **Upload .war File to an AWS S3 bucket**
 Uploads the packaged .war file to an S3 bucket for AWS Elastic Beanstalk deployment.
 ```bash
-aws s3 cp ~/book-seller/target/book-seller-1.0.0.war s3://book-seller-bucket123/ForBeanstalk/
+aws s3 cp ~/book-seller/target/book-seller-1.0.0.war s3://<your-bucket-name>/ForBeanstalk/
+```
 
 
+## **Step 8: Deploy the Project on AWS Elastic Beanstalk**
+1. Go to the AWS Elastic Beanstalk Console.
+2. Click Create Application → Name it book-seller-101.
+3. Choose Tomcat as the platform.
+4. Upload the .war file from your S3 bucket.
+5. Click Deploy → Wait for ~10 minutes.
 
 
-
-
-
-
+## **Step 9: Set Up the Database (Aurora MySQL)**
+1. Go to the AWS RDS Console.
+2. Click Create Database.
+3. Select Aurora-MySQL.
+4. Settings:
+    -DB Cluster Identifier: yourname-book-seller
+    -Master Username: admin
+    -Password: test1234
+    -Instance Type: db.t3.small
+    -Public Access: Yes
+    -Security Group: Allow port 3306 from 0.0.0.0/0.
+5. Click Create Database → Wait 10 minutes.
 
 
 
