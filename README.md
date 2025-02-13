@@ -236,7 +236,7 @@ SELECT * FROM books;
 
 ## **Step 12: Access Your Application**
 1. Go to the Beanstalk Console.
-2. Copy the Application URL (e.g., http://book-seller.us-east-1.elasticbeanstalk.com/).
+2. Copy the Application URL (Domain).
 3. Open it in a browser and test:
    - Select an author.
    - View book list.
@@ -244,3 +244,4 @@ SELECT * FROM books;
    - Check database updates.
 
 
+For more details, visit [reference](https://www3.ntu.edu.sg/home/ehchua/programming/java/JSPByExample.html).
