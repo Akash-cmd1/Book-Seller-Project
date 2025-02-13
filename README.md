@@ -29,6 +29,7 @@ Before starting, ensure you have the following:
 wget https://s3.amazonaws.com/klowdbay.com/YTCodeResources/book-seller.tar.gz
 ls
 ```
+```bash
 tar -xzvf book-seller.tar.gz
-```
+
 ls
