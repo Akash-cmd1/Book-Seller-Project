@@ -50,7 +50,7 @@ sudo snap install tree  # Alternative installation
 ```
 
 
-## **Step: Install Java JDK 13**
+## **Step 3: Install Java JDK 13**
 ```bash
 wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
 ```
@@ -75,6 +75,52 @@ export PATH
 ```bash
 java -version
 ```
+
+
+## **Step 4: Install Apache Maven**
+Downloads and extracts Maven to /opt/
+```bash
+wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+```
+```bash
+tar -xvf apache-maven-3.9.9-bin.tar.gz
+```
+```bash
+sudo mv apache-maven-3.9.9 /opt/
+```
+Configures Maven and verifies installation.
+```bash
+M2_HOME='/opt/apache-maven-3.9.9'
+```
+```bash
+PATH="$M2_HOME/bin:$PATH"
+```
+```bash
+export PATH
+```
+```bash
+mvn -v
+```
+
+
+## **Step 5: Navigate to Project Directory**
+Moves into the project directory.
+```bash
+cd book-seller
+```
+```bash
+ls
+```
+
+Navigate to Web Application Files:
+Lists all front-end web files (HTML/JSP).
+```bash
+cd ~/book-seller/src/main/webapp
+```
+```bash
+ls
+```
+
 
 
 
