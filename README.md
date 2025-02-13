@@ -32,6 +32,21 @@ Extracts the compressed project files
 ```bash
 tar -xzvf book-seller.tar.gz
 ```
-list the files
+List the files
 ```bash
 ls
+```
+
+
+## **Step 2: Verify the Directory Structure**
+```bash
+tree .
+```
+#If tree is not installed, install it using:
+```bash
+sudo apt install tree -y  # For Ubuntu/Debian
+sudo yum install tree  # For Amazon Linux
+sudo snap install tree  # Alternative installation
+
+
+
